@@ -1,0 +1,85 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<style>
+	h1{
+		text-align: center;
+		font-family:Courier New ;
+		color: red;
+		padding: 20px;
+	}
+	label{
+		font-size: 25px;
+		font-family:Courier New ;
+		font-weight: bold;
+		margin: 20px;
+		}
+	button {
+	  background-color:gray;
+	  border: none;
+	  color: white;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 15px;
+	  margin: 20px;
+	  padding: 5px;
+	  cursor: pointer;
+	  border-radius: 12px;
+	}
+	input.a:hover {
+	  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	  background-color: lightblue;
+	  color: blue;
+	  font-weight: bold;
+	}
+	input.a{
+	  border: none;
+	  color: white;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 17px;
+	  margin: 30px;
+	  padding: 20px;
+	  padding-right: 50px;
+	  padding-left: 50px;
+	  cursor: pointer;
+	  border-radius: 12px;
+	  background-color:gray;
+	}
+	button:hover {
+	  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	  background-color: lightblue;
+	}
+	input{
+		font-size: 20px;
+		margin: 20px;
+	}
+	div{
+		text-align: center;
+	}
+	a{
+		text-decoration: none;
+		text-align: center;
+		color: white;
+	}
+	a:hover{
+		color: blue;
+		font-weight: bold;
+	}
+</style>
+
+
+<form action ="{% url 'addcar' %}" method="POST">
+	{% csrf_token %}
+	<h1>Add New Car</h1>
+		<div>
+			<label> Brand :  <input type="text" class="field" placeholder="Brand" name="brand"  style="text-align: center;"></label><br>
+			<label> Color :  <input type="text" class="field" placeholder="Color" name="color"  style="text-align: center;"></label><br>
+			<label> Price :  <input type="text" class="field" placeholder="Price" name="price"  style="text-align: center;"></label><br>
+			<input type="submit" value="submit" class="a"><br>
+			<button><a href="{% url 'gallery' %}">View Gallery</a></button>
+		</div>
+</form>
+{% endblock %}
