@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<style>
+	table, td, th {
+	  border: 1px solid black;
+	  padding: 15px;
+	}
+
+	table {
+	  border-collapse: collapse;
+	  width: 70%;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	th {
+	  height: 60px;
+	  font-size: 30px;
+	  font-family: Courier New ;
+	}
+	td {
+		font-size: 20px;
+	}
+	h1{
+		text-align: center;
+		font-family: Courier New ;
+		color: red;
+		padding: 10px;
+	}
+	h2{
+		text-align: center;
+		font-family: Courier New ;
+		color: blue;
+		padding: 5px;
+	}
+	div{
+		text-align: center;
+	}
+</style>
+
+	<h1>Cars Gallery</h1><br>
+	<h2>Available Cars</h2>
+	<div>
+		<table>
+			<tr>
+				<th>Brand</th>
+				<th>Color</th>
+				<th>Price</th>
+			</tr>
+			
+		 	{% for x in savedcar %}
+		 		<tr>
+	            <td>{{x.brand}}</td>  
+	            <td>{{x.color}}</td>
+	            <td>{{x.price}}</td>
+	            </tr>
+	     	 {% endfor %}
+	  		
+	    </table>
+	</div>
+{% endblock %}
