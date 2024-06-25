@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<style>
+  button {
+    background-color:gray;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 30px;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 12px;
+  }
+  button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: lightblue;
+  }
+  h1{
+    text-align: center;
+    color: red;
+    font-family:Courier New ;
+    padding: 20px;
+  }
+  h2{
+    text-align: center;
+    color: blue;
+    font-family:Courier New ;
+    padding: 20px;
+  }
+  div{
+    text-align: center;
+  }
+  a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+  }
+  a:hover{
+    color: blue;
+    font-weight: bold;
+  }
+</style>
+
+
+	<h1>Wellcome to Home Page</h1>
+	<h2>Choose What You Want!</h2>
+  	<div>
+  		<button><a href="{% url 'addcar' %}">Add Car</a></button><br>
+  		<button><a href="{% url 'gallery' %}">View Gallery</a></button>
+    </div>
+{% endblock %}
+
